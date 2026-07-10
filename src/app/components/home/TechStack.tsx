@@ -18,21 +18,24 @@ const technologies = [
     "Linux",
 ];
 
+// array of icon and their corresponding technology name
+
+const techIcons = [
+    { icon: Code2, name: "Frontend Engineering" },
+    { icon: Server, name: "Backend APIs" },
+    { icon: Database, name: "Databases" },
+    { icon: Cloud, name: "Deployment & DevOps" },
+];
+
 export default function TechStack() {
     return (
-        <section className="relative overflow-hidden py-32 bg-background">
-            {/* Background Glow */}
-            <div className="absolute inset-0 -z-10">
-                <div className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-primary/10 blur-[140px] bg-glow" />
-            </div>
-
+        <section className="relative overflow-hidden py-12 sm:py-32 bg-background">
             <div className="mx-auto max-w-7xl px-6">
                 <div className="grid gap-20 lg:grid-cols-[0.9fr_1.1fr]">
-                    {/* Left */}
                     <div>
-                        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-primary">
+                        <Badge className="bg-primary/10 text-primary font-semibold tracking-[0.15em] text-sm">
                             TECH STACK
-                        </p>
+                        </Badge>
 
                         <h2 className="text-5xl font-bold leading-tight text-foreground">
                             Building with
@@ -46,33 +49,21 @@ export default function TechStack() {
                             developer experience and maintainability.
                         </p>
 
-                        <div className="mt-12 space-y-5 [&_span]:text-accent text-primary">
-                            <div className="flex items-center gap-3">
-                                <Code2 className="size-5" />
-                                <span>
-                                    Frontend Engineering
-                                </span>
-                            </div>
-
-                            <div className="flex items-center gap-3">
-                                <Server className="size-5" />
-                                <span>Backend APIs</span>
-                            </div>
-
-                            <div className="flex items-center gap-3">
-                                <Database className="size-5" />
-                                <span>Databases</span>
-                            </div>
-
-                            <div className="flex items-center gap-3">
-                                <Cloud className="size-5" />
-                                <span>Deployment & DevOps</span>
-                            </div>
-
-                        </div>
+                        <ul className="mt-12 space-y-5">
+                            {techIcons.map((tech) => (
+                                <li
+                                    key={tech.name}
+                                    className="flex items-center gap-3"
+                                >
+                                    <tech.icon className="size-5 text-primary" />
+                                    <span className="font-medium text-accent">
+                                        {tech.name}
+                                    </span>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
 
-                    {/* Right */}
                     <div>
                         <div className="flex flex-wrap gap-3">
                             {technologies.map((tech) => (
@@ -80,7 +71,6 @@ export default function TechStack() {
                                     key={tech}
                                     variant="outline"
                                     className="
-                                        rounded-full
                                         border-border/70
                                         bg-card/60
                                         px-5

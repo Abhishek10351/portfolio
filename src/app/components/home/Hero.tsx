@@ -2,18 +2,15 @@ import Lightfall from "@/components/ui/Lightfall";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react"; // Default icon library for shadcn
+import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function Hero() {
     return (
-        <div className="relative isolate overflow-hidden min-h-screen flex items-center justify-center">
-            {/* Background Effects */}
+        <section className="relative isolate overflow-hidden min-h-screen flex items-center justify-center">
             <div className="absolute inset-0 -z-10 h-full w-full hidde">
                 <Lightfall />
             </div>
-            {/* <div className="absolute inset-0 -z-10 bg-background/40" /> */}
 
-            {/* Content Container */}
             <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 z-10 relative flex flex-col items-center text-center">
                 <div className="mx-auto max-w-3xl">
                     <Badge
@@ -28,11 +25,9 @@ export default function Hero() {
                         Hi, I&apos;m Abhishek.
                     </h1>
 
-                    {/* Tightened max-width and specific engineering copy */}
                     <p className="mt-6 text-lg leading-8 text-gray-300 max-w-2xl mx-auto">
-                        Full Stack Developer FastAPI • Next.js • React •
-                        TypeScript I build scalable web applications, backend
-                        APIs, and AI-powered tools. 
+                        Full Stack Developer / 2D Game Developer / Tech
+                        Enthusiast | Indie Gamer
                     </p>
                     <div className="mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-6">
                         <Button
@@ -47,7 +42,7 @@ export default function Hero() {
                             asChild
                             variant="outline"
                             size="lg"
-                            className="glow font-semibold shadow-lg hover:bg-background/20 hover:text-primary transition-all duration-200 rounded-md"
+                            className="glow font-semibold shadow-lg hover:bg-background/20 hover:text-primary transition-all duration-800 rounded-md"
                         >
                             <Link
                                 href="#contact"
@@ -59,6 +54,6 @@ export default function Hero() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
