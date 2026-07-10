@@ -201,10 +201,10 @@ const Lightfall: React.FC<LightfallProps> = ({
     dpr,
     paused = false,
     colors = ["#A6C8FF", "#5227FF", "#FF9FFC", "#d41515"],
-    backgroundColor = "#0A29FF",
+    backgroundColor = "#070b14",
     speed = 0.2,
     streakCount = 1.3,
-    streakWidth = 0.70,
+    streakWidth = 0.7,
     streakLength = 1,
     glow = 1,
     density = 0.6,
@@ -212,12 +212,10 @@ const Lightfall: React.FC<LightfallProps> = ({
     zoom = window.innerWidth < 640 ? 6 : window.innerWidth < 1024 ? 4 : 2,
     backgroundGlow = 0.5,
     opacity = 1,
-    // mouseInteraction =,
-    // mouse interaction will only work on non touch devices, so we can check for that
-    mouseInteraction = !("ontouchstart" in window || navigator.maxTouchPoints > 0),
+    mouseInteraction = false,
     mouseStrength = 0.5,
-    mouseRadius = 1,
-    mouseDampening = 0.15,
+    mouseRadius = 0.1,
+    mouseDampening = 0.01,
     mixBlendMode,
 }) => {
     const containerRef = useRef<HTMLDivElement | null>(null);
