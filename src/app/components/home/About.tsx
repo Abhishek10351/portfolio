@@ -3,68 +3,100 @@ import FadeContent from "@/components/ui/FadeContent";
 import SpotlightCard from "@/components/ui/SpotlightCard";
 import { Briefcase, Coffee, GraduationCap, MapPin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-const info = [
+import type { LucideIcon } from "lucide-react";
+
+interface InfoItem {
+    icon: LucideIcon;
+    title: string;
+    value: string;
+}
+
+const info: InfoItem[] = [
     {
         icon: MapPin,
-        title: "Location",
+        title: "Home Base",
         value: "Assam, India",
     },
     {
         icon: Briefcase,
-        title: "Role",
+        title: "Current Mission",
         value: "Full Stack Developer",
     },
     {
         icon: GraduationCap,
-        title: "Education",
-        value: "B.Tech in C.S.E",
+        title: "Training Arc",
+        value: "B.Tech C.S.E",
     },
     {
         icon: Coffee,
-        title: "Interests",
-        value: "Building Side Projects",
+        title: "Power Source",
+        value: "Coffee & Side Projects",
     },
 ];
 
 const stats = [
     {
         value: "5+",
-        label: "Years Coding",
+        label: "Years Building",
     },
     {
-        value: "15+",
-        label: "Projects",
+        value: "10+",
+        label: "Projects Shipped",
     },
     {
         value: "∞",
-        label: "Curiosity",
+        label: "Things To Learn",
     },
 ];
+
+const AboutCard = ({ icon: Icon, title, value }: InfoItem) => {
+    return (
+        <SpotlightCard className="group flex flex-col gap-y-4 rounded-3xl border border-border bg-card p-4 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 sm:p-7">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                <Icon size={24} />
+            </div>
+
+            <h3 className="text-sm font-semibold text-muted-foreground">
+                {title}
+            </h3>
+
+            <p className="text-xl font-bold text-foreground">{value}</p>
+        </SpotlightCard>
+    );
+};
 
 export default function About() {
     return (
         <section
             id="about"
-            className="container mx-auto px-2 md:px-24 py-12 md:py-16"
+            className="container mx-auto px-2 py-12 md:px-24 md:py-16"
         >
-            <div className="grid items-center gap-24 lg:grid-cols-[1.15fr_0.85fr] px-4">
+            <div className="grid items-center gap-20 px-4 lg:grid-cols-[1.15fr_0.85fr]">
                 <FadeContent blur duration={700}>
                     <div className="max-w-2xl">
-                        <Badge className="bg-primary/10 text-primary font-semibold tracking-[0.25em] text-sm">
-                            ABOUT
+                        <Badge className="mb-5 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.28em] text-primary">
+                            Behind The Mask
                         </Badge>
 
                         <BlurText
-                            text="Building modern web experiences with clean code and thoughtful design."
-                            className="mt-6 text-4xl sm:text-5xl font-bold leading-tight tracking-tight text-muted-foreground"
+                            text="Building things, breaking things, and learning something new every time."
+                            className="text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl"
                         />
 
-                        <p className="mt-8 text-lg leading-9 text-gray-400">
-                            I'm a full stack developer passionate about crafting
-                            modern web applications that are fast, scalable, and
-                            enjoyable to use. I enjoy solving complex problems,
-                            designing intuitive interfaces, and continuously
-                            improving my skills through real-world projects.
+                        <p className="mt-8 text-lg leading-9 text-muted-foreground">
+                            Hey! I'm a full stack developer from Assam who
+                            enjoys turning ideas into real products. I build
+                            modern web applications, AI-powered tools, and
+                            experiments that push me to learn beyond my comfort
+                            zone.
+                        </p>
+
+                        <p className="mt-5 text-lg leading-9 text-muted-foreground">
+                            Most of my skills came from side projects, late
+                            nights, and debugging problems that seemed
+                            impossible at first. Every bug is a puzzle, every
+                            project is a new challenge, and every build makes
+                            the next one better.
                         </p>
 
                         <div className="mt-12 flex flex-wrap gap-10">
@@ -83,24 +115,9 @@ export default function About() {
                     </div>
                 </FadeContent>
 
-                <div className="ml-auto grid max-w-xl grid-cols-2 gap-2 sm:gap-5 bg-re-200">
+                <div className="grid max-w-xl grid-cols-2 gap-3 sm:gap-5 lg:ml-auto">
                     {info.map((item) => (
-                        <SpotlightCard
-                            key={item.title}
-                            className="group rounded-3xl flex flex-col border border-border p-3 sm:p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 bg-card gap-y-4"
-                        >
-                            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-110">
-                                <item.icon size={24} />
-                            </div>
-
-                            <h3 className="text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground">
-                                {item.title}
-                            </h3>
-
-                            <p className="text-lg font-semibold text-accent-foreground">
-                                {item.value}
-                            </p>
-                        </SpotlightCard>
+                        <AboutCard key={item.title} {...item} />
                     ))}
                 </div>
             </div>
