@@ -12,7 +12,12 @@ function Card({
             data-slot="card"
             data-size={size}
             className={cn(
-                "group/card flex flex-col gap-(--card-spacing) overflow-hidden rounded-4xl border border-border bg-card/80 py-(--card-spacing) text-sm text-card-foreground shadow-lg backdrop-blur-md transition-all duration-200 [--card-spacing:--spacing(6)] has-[>img:first-child]:pt-0 data-[size=sm]:[--card-spacing:--spacing(4)] *:[img:first-child]:rounded-t-4xl *:[img:last-child]:rounded-b-4xl",
+                // CHANGED:
+                // 1. rounded-4xl -> rounded-none (sharp comic panel edges)
+                // 2. border -> border-2 border-border
+                // 3. Removed backdrop-blur-md and bg-card/80 -> solid bg-card
+                // 4. Added hard offset shadow and kinetic hover lift (-translate-x-1 -translate-y-1)
+                "group/card flex flex-col gap-(--card-spacing) overflow-hidden rounded-none border-2 border-border bg-card py-(--card-spacing) text-sm text-card-foreground shadow-[4px_4px_0px_0px_hsl(var(--border))] transition-all duration-200 [--card-spacing:--spacing(6)] hover:-translate-x-1 hover:-translate-y-1 hover:border-primary hover:shadow-[6px_6px_0px_0px_hsl(var(--primary))] has-[>img:first-child]:pt-0 data-[size=sm]:[--card-spacing:--spacing(4)] *:[img:first-child]:rounded-none *:[img:last-child]:rounded-none",
                 className,
             )}
             {...props}
@@ -25,7 +30,8 @@ function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
         <div
             data-slot="card-header"
             className={cn(
-                "group/card-header @container/card-header grid auto-rows-min items-start gap-1.5 rounded-t-4xl px-(--card-spacing) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-spacing)",
+                // CHANGED: rounded-t-4xl -> rounded-none
+                "group/card-header @container/card-header grid auto-rows-min items-start gap-1.5 rounded-none px-(--card-spacing) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-spacing)",
                 className,
             )}
             {...props}
@@ -38,7 +44,8 @@ function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
         <div
             data-slot="card-title"
             className={cn(
-                "font-heading text-lg font-semibold tracking-tight text-foreground",
+                // CHANGED: Added font-black, uppercase, and wider tracking for that dossier/comic heading look
+                "font-heading text-xl font-black uppercase tracking-tight text-foreground transition-colors group-hover/card:text-primary",
                 className,
             )}
             {...props}
@@ -51,7 +58,8 @@ function CardDescription({ className, ...props }: React.ComponentProps<"div">) {
         <div
             data-slot="card-description"
             className={cn(
-                "text-sm text-muted-foreground leading-relaxed",
+                // CHANGED: Bumped font-medium for crisp legibility against dark backgrounds
+                "text-sm font-medium leading-relaxed text-muted-foreground",
                 className,
             )}
             {...props}
@@ -87,7 +95,8 @@ function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
         <div
             data-slot="card-footer"
             className={cn(
-                "flex items-center rounded-b-4xl px-(--card-spacing) [.border-t]:pt-(--card-spacing)",
+                // CHANGED: rounded-b-4xl -> rounded-none
+                "flex items-center rounded-none px-(--card-spacing) [.border-t]:pt-(--card-spacing)",
                 className,
             )}
             {...props}

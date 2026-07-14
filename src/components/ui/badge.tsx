@@ -5,20 +5,20 @@ import { Slot } from "radix-ui";
 import { cn } from "@/lib/utils";
 
 const badgeVariants = cva(
-    "group/badge inline-flex h-6 w-fit shrink-0 items-center justify-center gap-1.5 overflow-hidden rounded-full border border-transparent px-3 py-0.5 text-xs font-medium whitespace-nowrap transition-all duration-200 focus-visible:ring-2 focus-visible:ring-ring/50 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 [&>svg]:pointer-events-none [&>svg]:size-3.5",
+    "group/badge inline-flex h-7 w-fit shrink-0 items-center justify-center gap-1.5 overflow-hidden rounded-none border-2 px-3 py-0.5 text-xs font-black uppercase tracking-widest whitespace-nowrap transition-all duration-150 focus-visible:ring-2 focus-visible:ring-ring/50 has-data-[icon=inline-end]:pr-2.5 has-data-[icon=inline-start]:pl-2.5 [&>svg]:pointer-events-none [&>svg]:size-3.5",
     {
         variants: {
             variant: {
                 default:
-                    "bg-primary text-primary-foreground shadow-sm [a]:hover:bg-primary/90",
+                    "border-primary bg-background text-primary shadow-[2px_2px_0px_0px_hsl(var(--primary))] [a]:hover:bg-primary [a]:hover:text-primary-foreground",
                 secondary:
-                    "bg-secondary text-secondary-foreground border border-border/50 [a]:hover:bg-secondary/80 [a]:hover:text-foreground",
+                    "border-accent bg-background text-accent shadow-[2px_2px_0px_0px_hsl(var(--accent))] [a]:hover:bg-accent [a]:hover:text-accent-foreground",
                 outline:
-                    "border border-border bg-background/10 text-foreground backdrop-blur-md [a]:hover:bg-accent/15 [a]:hover:border-ring/50 [a]:hover:text-accent-foreground",
-                ghost: "text-muted-foreground hover:bg-accent/10 hover:text-foreground",
+                    "border-border bg-card text-foreground shadow-[2px_2px_0px_0px_hsl(var(--border))] [a]:hover:border-primary [a]:hover:text-primary",
+                ghost: "border-transparent text-muted-foreground hover:bg-accent/10 hover:text-foreground shadow-none",
                 destructive:
-                    "border border-destructive/20 bg-destructive/10 text-destructive focus-visible:ring-destructive/20 [a]:hover:bg-destructive/20",
-                link: "text-primary underline-offset-4 hover:underline hover:text-primary/80",
+                    "border-destructive bg-background text-destructive shadow-[2px_2px_0px_0px_hsl(var(--destructive))] [a]:hover:bg-destructive [a]:hover:text-destructive-foreground",
+                link: "border-transparent text-primary underline-offset-4 decoration-2 hover:underline hover:text-primary/80 shadow-none",
             },
         },
         defaultVariants: {
