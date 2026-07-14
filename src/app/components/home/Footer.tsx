@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { ArrowUp, Terminal, ShieldCheck } from "lucide-react";
 import { GitHubLight, LinkedIn, Gmail } from "developer-icons";
 
@@ -12,9 +11,7 @@ export default function Footer() {
     return (
         <footer className="relative border-t-2 border-border/80 bg-card/40 text-foreground">
             <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-                {/* TOP ROW: System Status & Back-to-Top Elevator */}
                 <div className="flex flex-col items-center justify-between gap-6 border-b-2 border-border/40 pb-8 sm:flex-row">
-                    {/* Left: Terminal Telemetry */}
                     <div className="flex items-center gap-3">
                         <div className="flex h-10 w-10 shrink-0 items-center justify-center border-2 border-primary bg-background text-primary shadow-[2px_2px_0px_0px_hsl(var(--primary))]">
                             <Terminal size={18} />
@@ -35,9 +32,7 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Right: Quick Socials & Back to Top Button */}
                     <div className="flex items-center gap-4">
-                        {/* Compact Social Strip */}
                         <div className="flex items-center gap-2 pr-4 border-r-2 border-border/40">
                             <a
                                 href="https://github.com/Abhishek10351"
@@ -66,7 +61,6 @@ export default function Footer() {
                             </a>
                         </div>
 
-                        {/* Back to Top Elevator Button */}
                         <button
                             onClick={scrollToTop}
                             aria-label="Scroll to top of page"
@@ -81,7 +75,6 @@ export default function Footer() {
                     </div>
                 </div>
 
-                {/* BOTTOM ROW: Copyright & Tech Attribution */}
                 <div className="mt-8 flex flex-col items-center justify-between gap-4 text-center font-mono text-xs text-muted-foreground sm:flex-row sm:text-left">
                     <p>
                         © {new Date().getFullYear()} Abhishek. All rights

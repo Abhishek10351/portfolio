@@ -54,24 +54,21 @@
     --color-hero-end: var(--hero-end);
     --color-glow: var(--glow);
 
-    --radius-sm: calc(var(--radius) * .6);
-    --radius-md: calc(var(--radius) * .8);
-    --radius-lg: var(--radius);
-    --radius-xl: calc(var(--radius) * 1.4);
-    --radius-2xl: calc(var(--radius) * 1.8);
-    --radius-3xl: calc(var(--radius) * 2.2);
-    --radius-4xl: calc(var(--radius) * 2.6);
+    --radius-sm: calc(var(--radius) * 0.4);
+    --radius-md: calc(var(--radius) * 0.6);
+    --radius-lg: calc(var(--radius) * 0.8);
+    --radius-xl: var(--radius);
+    --radius-2xl: calc(var(--radius) * 1.2);
+    --radius-3xl: calc(var(--radius) * 1.5);
+    --radius-4xl: calc(var(--radius) * 2);
 }
 
 :root {
-
     /* ---------- Base ---------- */
-
     --background: oklch(0.165 0.018 255);
     --foreground: oklch(0.955 0.008 255);
 
     /* ---------- Surfaces ---------- */
-
     --card: oklch(0.215 0.022 255);
     --card-foreground: var(--foreground);
 
@@ -79,7 +76,6 @@
     --popover-foreground: var(--foreground);
 
     /* ---------- Spider-Man ---------- */
-
     /* Crimson */
     --primary: oklch(0.63 0.225 23);
     --primary-foreground: oklch(0.985 0.004 255);
@@ -93,22 +89,18 @@
     --accent-foreground: oklch(0.19 0.025 245);
 
     /* ---------- Text ---------- */
-
     --muted: oklch(0.24 0.018 255);
     --muted-foreground: oklch(0.72 0.02 255);
 
     /* ---------- States ---------- */
-
     --destructive: oklch(0.65 0.22 25);
 
     /* ---------- Borders ---------- */
-
-    --border: oklch(0.33 0.015 255 / .45);
-    --input: oklch(0.33 0.015 255 / .45);
+    --border: oklch(0.33 0.015 255 / 0.6);
+    --input: oklch(0.33 0.015 255 / 0.45);
     --ring: var(--primary);
 
     /* ---------- Charts ---------- */
-
     --chart-1: var(--primary);
     --chart-2: var(--accent);
     --chart-3: oklch(0.72 0.16 150);
@@ -116,22 +108,17 @@
     --chart-5: oklch(0.71 0.18 325);
 
     /* ---------- Sidebar ---------- */
-
     --sidebar: oklch(0.19 0.022 255);
     --sidebar-foreground: var(--foreground);
-
     --sidebar-primary: var(--primary);
     --sidebar-primary-foreground: var(--primary-foreground);
-
     --sidebar-accent: var(--secondary);
     --sidebar-accent-foreground: var(--foreground);
-
     --sidebar-border: var(--border);
     --sidebar-ring: var(--primary);
 
     /* ---------- Misc ---------- */
-
-    --radius: 1rem;
+    --radius: 0.75rem; 
 
     --hero-start: var(--primary);
     --hero-middle: oklch(0.68 0.18 315);
@@ -141,49 +128,57 @@
 }
 
 @layer utilities {
-
     .hero-gradient {
-        background:
-            linear-gradient(
-                135deg,
-                var(--hero-start) 0%,
-                var(--hero-middle) 45%,
-                var(--hero-end) 100%
-            );
+        background: linear-gradient(
+            135deg,
+            var(--hero-start) 0%,
+            var(--hero-middle) 45%,
+            var(--hero-end) 100%
+        );
     }
 
     .text-gradient {
-        background:
-            linear-gradient(
-                90deg,
-                var(--hero-start),
-                var(--hero-middle),
-                var(--hero-end)
-            );
+        background: linear-gradient(
+            90deg,
+            var(--hero-start),
+            var(--hero-middle),
+            var(--hero-end)
+        );
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
     }
 
-    .glass-card {
-        background:
-            color-mix(in oklab, var(--card) 82%, transparent);
-
-        backdrop-filter: blur(20px);
-
-        border: 1px solid var(--border);
-
-        box-shadow:
-            0 16px 48px color-mix(in oklab, black 32%, transparent),
-            inset 0 1px 0 color-mix(in oklab, white 7%, transparent);
+   
+    .comic-panel {
+        background-color: var(--card);
+        border: 2px solid var(--border);
+        box-shadow: 5px 5px 0px 0px var(--border);
+        transition: all 0.2s ease-in-out;
     }
 
-    .glow {
-        box-shadow:
-            0 0 50px color-mix(in oklab, var(--glow) 28%, transparent);
+    .comic-panel:hover {
+        border-color: var(--primary);
+        box-shadow: 6px 6px 0px 0px var(--primary);
+        transform: translate(-2px, -2px);
     }
-}
 
-.badge {
-    @apply inline-flex items-center rounded-full bg-primary px-2 py-1 text-xs font-medium text-primary-foreground;
+
+    .comic-panel-accent {
+        background-color: var(--card);
+        border: 2px solid var(--accent);
+        box-shadow: 5px 5px 0px 0px var(--accent);
+    }
+
+    .glow-primary {
+        box-shadow: 0 0 25px -5px color-mix(in oklab, var(--primary) 60%, transparent);
+    }
+
+    .glow-accent {
+        box-shadow: 0 0 25px -5px color-mix(in oklab, var(--accent) 60%, transparent);
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
 }
