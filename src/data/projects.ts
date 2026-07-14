@@ -28,8 +28,8 @@ export const projects: Project[] = [
         subtitle: "Modern form creation and management platform",
         featured: true,
         status: "In Progress",
-        image: "/projects/form-builder.webp",
-        github: "",
+        image: "form-builder.png",
+        github: "https://github.com/Abhishek10351/form-builder-studio",
         demo: "",
         description:
             "A modern full-stack form builder designed to simplify creating, customizing and managing forms. The platform focuses on usability, responsive design and maintainable architecture with a powerful editor, reusable templates and customizable themes.",
@@ -75,7 +75,9 @@ export const projects: Project[] = [
 
         status: "Completed",
 
-        github: "",
+        image: "leaf-disease-detection.png",
+
+        github: "https://github.com/Abhishek10351/leaf-disease-detection",
 
         demo: "",
 
@@ -121,7 +123,7 @@ export const projects: Project[] = [
 
         status: "Completed",
 
-        image: "/projects/greenhorn.webp",
+        image: "green-horn-travels.png",
 
         github: "https://github.com/Abhishek10351/green-horn-travels",
 
@@ -161,7 +163,7 @@ export const projects: Project[] = [
 
         status: "Completed",
 
-        image: "/projects/polling.webp",
+        image: "polling-system.png",
 
         github: "https://github.com/Abhishek10351/decentralized-polling-system",
 
@@ -200,7 +202,7 @@ export const projects: Project[] = [
 
         status: "Completed",
 
-        image: "/projects/employee.webp",
+        image: "employee-management.png",
 
         github: "https://github.com/Abhishek10351/employee-management",
 
@@ -249,7 +251,7 @@ export const projects: Project[] = [
 
         status: "Completed",
 
-        image: "/projects/intensity.webp",
+        image: "intensity.png",
 
         github: "https://github.com/Abhishek10351/Intensity",
 

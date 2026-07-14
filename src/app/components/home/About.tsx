@@ -92,6 +92,63 @@ export default function About() {
                         className="text-balance text-3xl font-black uppercase tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl"
                     />
                 </div>
+                {/* LEFT COLUMN: Ultra-Scannable Bio & Stats */}
+                <div className="flex h-full flex-col justify-between">
+                    <div className="space-y-4">
+                        {/* Punchy Lead-In */}
+                        <p className="border-l-4 border-primary pl-4 text-lg font-black tracking-tight text-foreground uppercase sm:text-xl">
+                            Full-stack architect turning wild ideas into
+                            scalable, production-ready software.
+                        </p>
+
+                        {/* 6-Second Tactical Bullet Points */}
+                        <div className="mt-6 grid gap-3 pt-2 font-mono text-xs font-bold text-muted-foreground sm:text-sm">
+                            <div className="flex items-center gap-3">
+                                <span className="flex h-5 w-5 shrink-0 items-center justify-center bg-primary/20 text-primary">
+                                    ✓
+                                </span>
+                                <span>
+                                    <strong className="text-foreground">
+                                        The Mindset:
+                                    </strong>{" "}
+                                    Every bug is a puzzle; every project is a
+                                    new map to unlock.
+                                </span>
+                            </div>
+
+                            <div className="flex items-center gap-3">
+                                <span className="flex h-5 w-5 shrink-0 items-center justify-center bg-primary/20 text-primary">
+                                    ✓
+                                </span>
+                                <span>
+                                    <strong className="text-foreground">
+                                        The Execution:
+                                    </strong>{" "}
+                                    Self-taught through late nights, side
+                                    projects, and complex debugging.
+                                </span>
+                            </div>
+
+                            <div className="flex items-center gap-3">
+                                <span className="flex h-5 w-5 shrink-0 items-center justify-center bg-primary/20 text-primary">
+                                    ✓
+                                </span>
+                                <span>
+                                    <strong className="text-foreground">
+                                        The Focus:
+                                    </strong>{" "}
+                                    Modern web apps, AI/ML integrations, &
+                                    responsive UI/UX.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* YOUR EXISTING STATS STAMP BOXES GO HERE... */}
+                    <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-4 pt-6 border-t border-border/60">
+                        {/* ... CountUp stats ... */}
+                    </div>
+                </div>
 
                 <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
                     <FadeContent blur duration={600}>
@@ -117,7 +174,6 @@ export default function About() {
                                     build makes the next run even better.
                                 </p>
                             </div>
-
 
                             <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-4 pt-6 border-t border-border/60">
                                 {stats.map((item) => (

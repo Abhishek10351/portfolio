@@ -17,13 +17,12 @@ export default function FeaturedProject({ project }: FeaturedProjectProps) {
             color="oklch(0.63 0.225 23)"
         >
             <div className="grid gap-8 p-6 lg:grid-cols-2 lg:gap-12 lg:p-10">
-                {/* Left Column: Technical Viewport Image */}
-                <div className="relative overflow-hidden border-2 border-border bg-muted aspect-video lg:aspect-auto">
+                <div className="relative overflow-hidden border-2 border-border aspect-video lg:aspect-auto">
                     {project.image ? (
                         <img
-                            src={project.image}
+                            src={`/projects/${project.image}`}
                             alt={project.title}
-                            className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                            className="h-ful w-full object-cove transition duration-500 group-hover:scale-105"
                         />
                     ) : (
                         <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary/20 to-accent/20">
@@ -33,7 +32,6 @@ export default function FeaturedProject({ project }: FeaturedProjectProps) {
                         </div>
                     )}
 
-                    {/* Corner Directive Tag */}
                     <div className="absolute top-3 left-3 bg-background/90 border border-primary px-2 py-1">
                         <span className="text-[10px] font-mono font-bold text-primary tracking-widest uppercase">
                             ISSUE #01 // MAIN EVENT
@@ -41,7 +39,6 @@ export default function FeaturedProject({ project }: FeaturedProjectProps) {
                     </div>
                 </div>
 
-                {/* Right Column: Dossier Metadata */}
                 <div className="flex flex-col justify-between gap-6">
                     <div>
                         <div className="flex items-center gap-3">
@@ -71,7 +68,6 @@ export default function FeaturedProject({ project }: FeaturedProjectProps) {
                         </p>
                     </div>
 
-                    {/* Tech Cartridges Stack */}
                     <div className="flex flex-wrap gap-2 pt-2">
                         {project.technologies.map((tech) => (
                             <span
@@ -83,7 +79,6 @@ export default function FeaturedProject({ project }: FeaturedProjectProps) {
                         ))}
                     </div>
 
-                    {/* Verified Highlights Box */}
                     <div className="grid gap-2.5 border-t-2 border-border/60 pt-4">
                         <span className="font-mono text-[11px] font-bold text-muted-foreground tracking-widest uppercase">
                             // Verified Specifications:
@@ -103,7 +98,6 @@ export default function FeaturedProject({ project }: FeaturedProjectProps) {
                         </div>
                     </div>
 
-                    {/* Action Footer */}
                     <div className="flex flex-wrap gap-4 pt-4 border-t-2 border-border/60">
                         {project.github && (
                             <a

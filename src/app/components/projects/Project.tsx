@@ -6,7 +6,6 @@ import FeaturedProject from "./FeaturedProject";
 import ProjectCard from "./ProjectCard";
 import { projects } from "@/data/projects";
 
-// React Bits & UI Imports
 import BlurText from "@/components/ui/BlurText";
 import FadeContent from "@/components/ui/FadeContent";
 import { Badge } from "@/components/ui/badge";
@@ -21,10 +20,8 @@ export default function Projects() {
 
     return (
         <div className="relative min-h-screen bg-background text-foreground">
-            {/* STICKY TOP ESCAPE HATCH WITH OFFICIAL DEVELOPER ICONS */}
             <header className="sticky top-0 z-50 w-full border-b-2 border-border/80 bg-background/90 backdrop-blur-md">
                 <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-                    {/* Return to Home Anchor */}
                     <Link
                         href="/"
                         className="group inline-flex items-center gap-2 border-2 border-border bg-card px-3 py-1.5 font-mono text-xs font-black tracking-widest uppercase shadow-[2px_2px_0px_0px_hsl(var(--border))] transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:border-primary hover:text-primary hover:shadow-[4px_4px_0px_0px_hsl(var(--primary))]"
@@ -33,9 +30,7 @@ export default function Projects() {
                         <span>Basecamp // Abhishek</span>
                     </Link>
 
-                    {/* Quick-Access Social & Comms Anchors (Uiverse + Developer Icons) */}
                     <div className="flex items-center gap-3">
-                        {/* 1. GITHUB BUTTON (Silver/White Glow, Square Geometry) */}
                         <a
                             href="https://github.com/Abhishek10351"
                             target="_blank"
@@ -52,7 +47,6 @@ export default function Projects() {
                             </div>
                         </a>
 
-                        {/* 2. LINKEDIN BUTTON (Electric Blue/Indigo Glow, Square Geometry) */}
                         <a
                             href="https://linkedin.com"
                             target="_blank"
@@ -69,7 +63,6 @@ export default function Projects() {
                             </div>
                         </a>
 
-                        {/* 3. GMAIL BUTTON (Crimson Red Glow, Square Geometry) */}
                         <a
                             href="mailto:abhishek@example.com?subject=Mission%20Inquiry%20//%20Portfolio"
                             aria-label="Direct Email via Gmail"
@@ -91,7 +84,6 @@ export default function Projects() {
                 id="projects"
                 className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 md:py-20 lg:px-8"
             >
-                {/* ARCHIVE HEADER */}
                 <div className="mb-16 flex flex-col items-start border-b-2 border-border pb-8">
                     <div className="flex flex-wrap items-center gap-3">
                         <Badge className="rounded-none border-2 border-primary bg-background px-3.5 py-1 text-xs font-black tracking-widest text-primary uppercase shadow-[3px_3px_0px_0px_hsl(var(--primary))] -rotate-1 cursor-default">
@@ -119,7 +111,6 @@ export default function Projects() {
                     </p>
                 </div>
 
-                {/* THE MASTER CASE FILE (Featured Project) */}
                 {featured && (
                     <div className="mb-16">
                         <div className="mb-4 flex items-center gap-2 font-mono text-xs font-bold text-primary tracking-widest uppercase">
@@ -133,7 +124,6 @@ export default function Projects() {
                     </div>
                 )}
 
-                {/* THE ARCHIVE GRID */}
                 <div>
                     <div className="mb-6 flex items-center justify-between border-b-2 border-border/60 pb-2">
                         <span className="font-mono text-xs font-bold text-muted-foreground tracking-widest uppercase">
@@ -161,7 +151,6 @@ export default function Projects() {
                     </div>
                 </div>
 
-                {/* Comic Book Footer Stamp */}
                 <footer className="mt-20 border-t-2 border-border/60 pt-8 text-center">
                     <p className="font-mono text-xs font-bold text-muted-foreground tracking-widest uppercase">
                         More experiments residing in localized repositories //{" "}

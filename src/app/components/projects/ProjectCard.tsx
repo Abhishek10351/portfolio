@@ -17,12 +17,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             color="oklch(0.73 0.145 245)"
         >
             {/* Image / Header Banner: Sharp edges, no rounding */}
-            <div className="relative aspect-video w-full overflow-hidden border-b-2 border-border bg-muted">
+            <div className="relative aspect-video w-full overflow-hidden border-b-2 border-border">
                 {project.image ? (
                     <img
-                        src={project.image}
+                        src={`/projects/${project.image}`}
                         alt={project.title}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="h-ful w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                 ) : (
                     <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary/20 via-background to-accent/20">
