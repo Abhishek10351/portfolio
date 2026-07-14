@@ -1,35 +1,8 @@
 import { Badge } from "@/components/ui/badge";
-import SpotlightCard from "@/components/ui/SpotlightCard";
-
-import { Zap, ShieldCheck, Rocket, Layers3, Globe } from "lucide-react";
+// import SpotlightCard from "@/components/ui/SpotlightCard";
 
 import type { LucideIcon } from "lucide-react";
 
-const highlights = [
-    {
-        icon: Zap,
-        title: "Performance First",
-        description:
-            "Optimized applications focused on speed and responsiveness.",
-    },
-    {
-        icon: Layers3,
-        title: "Clean Architecture",
-        description: "Scalable codebases built with maintainability in mind.",
-    },
-    {
-        icon: Rocket,
-        title: "Production Ready",
-        description:
-            "Modern deployment workflows and best development practices.",
-    },
-    {
-        icon: ShieldCheck,
-        title: "Type Safe",
-        description:
-            "Reliable applications powered by TypeScript and strong typing.",
-    },
-];
 export interface Technology {
     name: string;
     icon: React.ElementType;
@@ -40,12 +13,6 @@ export interface Category {
     icon: LucideIcon;
     description: string;
     technologies: Technology[];
-}
-
-interface Highlight {
-    icon: LucideIcon;
-    title: string;
-    description: string;
 }
 
 import {
@@ -251,21 +218,6 @@ const CategoryCard = ({
     );
 };
 
-const HighlightCard = ({ icon: Icon, title, description }: Highlight) => {
-    return (
-        <SpotlightCard className="group rounded-2xl border bg-card p-6">
-            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent transition-transform duration-300 group-hover:scale-110">
-                <Icon size={24} />
-            </div>
-            <h3 className="mb-2 text-lg font-semibold text-primary">{title}</h3>
-
-            <p className="text-sm leading-relaxed text-muted-foreground">
-                {description}
-            </p>
-        </SpotlightCard>
-    );
-};
-
 export default function TechStack() {
     return (
         <section className="py-8 md:py-12 lg:py-16">
@@ -286,14 +238,6 @@ export default function TechStack() {
                         software.
                     </p>
                 </div>
-
-                {/* Optional highlights
-                <div className="mb-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-                    {highlights.map((item) => (
-                        <HighlightCard {...item} key={item.title} />
-                    ))}
-                </div>
-                */}
 
                 <div className="grid gap-6 md:grid-cols-2">
                     {categories.map((category) => (
