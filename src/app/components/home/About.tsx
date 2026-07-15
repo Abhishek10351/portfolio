@@ -92,90 +92,60 @@ export default function About() {
                         className="text-balance text-3xl font-black uppercase tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl"
                     />
                 </div>
-                {/* LEFT COLUMN: Ultra-Scannable Bio & Stats */}
-                <div className="flex h-full flex-col justify-between">
-                    <div className="space-y-4">
-                        {/* Punchy Lead-In */}
-                        <p className="border-l-4 border-primary pl-4 text-lg font-black tracking-tight text-foreground uppercase sm:text-xl">
-                            Full-stack architect turning wild ideas into
-                            scalable, production-ready software.
-                        </p>
-
-                        {/* 6-Second Tactical Bullet Points */}
-                        <div className="mt-6 grid gap-3 pt-2 font-mono text-xs font-bold text-muted-foreground sm:text-sm">
-                            <div className="flex items-center gap-3">
-                                <span className="flex h-5 w-5 shrink-0 items-center justify-center bg-primary/20 text-primary">
-                                    ✓
-                                </span>
-                                <span>
-                                    <strong className="text-foreground">
-                                        The Mindset:
-                                    </strong>{" "}
-                                    Every bug is a puzzle; every project is a
-                                    new map to unlock.
-                                </span>
-                            </div>
-
-                            <div className="flex items-center gap-3">
-                                <span className="flex h-5 w-5 shrink-0 items-center justify-center bg-primary/20 text-primary">
-                                    ✓
-                                </span>
-                                <span>
-                                    <strong className="text-foreground">
-                                        The Execution:
-                                    </strong>{" "}
-                                    Self-taught through late nights, side
-                                    projects, and complex debugging.
-                                </span>
-                            </div>
-
-                            <div className="flex items-center gap-3">
-                                <span className="flex h-5 w-5 shrink-0 items-center justify-center bg-primary/20 text-primary">
-                                    ✓
-                                </span>
-                                <span>
-                                    <strong className="text-foreground">
-                                        The Focus:
-                                    </strong>{" "}
-                                    Modern web apps, AI/ML integrations, &
-                                    responsive UI/UX.
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* YOUR EXISTING STATS STAMP BOXES GO HERE... */}
-                    <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-4 pt-6 border-t border-border/60">
-                        {/* ... CountUp stats ... */}
-                    </div>
-                </div>
 
                 <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
                     <FadeContent blur duration={600}>
                         <div className="flex h-full flex-col justify-between">
-                            <div className="space-y-6 text-base font-medium leading-relaxed text-muted-foreground sm:text-lg">
-                                <p className="border-l-4 border-primary pl-4 italic text-foreground">
-                                    Hey! I&apos;m a full stack developer from
-                                    Assam who enjoys turning wild ideas into
-                                    real, tangible products. I build modern web
-                                    applications, AI tools, and experiments that
-                                    force me to learn beyond my comfort zone.
+                            <div className="space-y-4">
+                                <p className="border-l-4 border-primary pl-4 text-lg font-black tracking-tight text-foreground uppercase sm:text-xl">
+                                    Full-stack architect turning wild ideas into
+                                    scalable, production-ready software.
                                 </p>
-                                <p>
-                                    Most of my skills weren&apos;t handed to
-                                    me—they came from late nights, side
-                                    projects, and debugging problems that seemed
-                                    completely impossible at first.
-                                </p>
-                                <p>
-                                    I treat coding like a good indie game: every
-                                    bug is a puzzle to decipher, every project
-                                    is a new map to unlock, and every clean
-                                    build makes the next run even better.
-                                </p>
+
+                                <div className="mt-6 grid gap-3 pt-2 font-mono text-xs font-bold text-muted-foreground sm:text-sm">
+                                    <div className="flex items-center gap-3">
+                                        <span className="flex h-5 w-5 shrink-0 items-center justify-center bg-primary/20 text-primary">
+                                            ✓
+                                        </span>
+                                        <span>
+                                            <strong className="text-foreground">
+                                                The Mindset:
+                                            </strong>{" "}
+                                            Every bug is a puzzle; every project
+                                            is a new map to unlock.
+                                        </span>
+                                    </div>
+
+                                    <div className="flex items-center gap-3">
+                                        <span className="flex h-5 w-5 shrink-0 items-center justify-center bg-primary/20 text-primary">
+                                            ✓
+                                        </span>
+                                        <span>
+                                            <strong className="text-foreground">
+                                                The Execution:
+                                            </strong>{" "}
+                                            Self-taught through late nights,
+                                            side projects, and complex
+                                            debugging.
+                                        </span>
+                                    </div>
+
+                                    <div className="flex items-center gap-3">
+                                        <span className="flex h-5 w-5 shrink-0 items-center justify-center bg-primary/20 text-primary">
+                                            ✓
+                                        </span>
+                                        <span>
+                                            <strong className="text-foreground">
+                                                The Focus:
+                                            </strong>{" "}
+                                            Modern web apps, AI/ML integrations,
+                                            & responsive UI/UX.
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-4 pt-6 border-t border-border/60">
+                            <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-4 pt-6 border-t border-border/60">
                                 {stats.map((item) => (
                                     <div
                                         key={item.label}
@@ -214,7 +184,6 @@ export default function About() {
                             ))}
                         </div>
 
-                        {/* Comic Flavor Box */}
                         <div className="mt-4 border-2 border-dashed border-border p-4 text-center">
                             <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
                                 🕷️ Current Directive:{" "}
