@@ -142,7 +142,7 @@ export default function Projects() {
                                 duration={500 + index * 150}
                             >
                                 <div className="h-full">
-                                    <ProjectCard project={project} />
+                                    <ProjectCard {...project} />
                                 </div>
                             </FadeContent>
                         ))}
