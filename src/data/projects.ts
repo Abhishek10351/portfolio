@@ -255,7 +255,7 @@ export const projects: Project[] = [
 
         github: "https://github.com/Abhishek10351/Intensity",
 
-        demo: "",
+        demo: "..",
 
         description:
             "A multi-purpose Discord bot built with Python and Disnake featuring moderation utilities, interactive games and Discord UI components. A lightweight Flask service was used to keep the bot available on free hosting platforms.",

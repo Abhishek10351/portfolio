@@ -4,13 +4,7 @@ import BlurText from "@/components/ui/BlurText";
 import FadeContent from "@/components/ui/FadeContent";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-    Radio,
-    ExternalLink,
-    FileDown,
-    MapPin,
-    Clock,
-} from "lucide-react";
+import { Radio, ExternalLink, FileDown, MapPin, Clock } from "lucide-react";
 
 import { GitHubLight, LinkedIn, Gmail } from "developer-icons";
 
@@ -27,7 +21,7 @@ interface ContactChannel {
 const channels: ContactChannel[] = [
     {
         name: "Direct Transmission",
-        handle: "abhik5567@gmail.com", 
+        handle: "abhik5567@gmail.com",
         description:
             "Best for project inquiries, architectural consulting, or full-time roles.",
         href: "mailto:abhik5567@gmail.com?subject=Mission%20Inquiry%20//%20Portfolio",
@@ -62,8 +56,11 @@ const channels: ContactChannel[] = [
 
 export default function Contact() {
     return (
-        <section id="contact" className="relative py-16 md:py-24 lg:py-32 -scroll-mt-20">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section
+            id="contact"
+            className="relative py-16 md:py-24 lg:py-32 -scroll-mt-20"
+        >
+            <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div className="flex flex-col items-center text-center">
                     <Badge className="mb-4 rounded-none border-2 border-primary bg-background px-3.5 py-1 text-xs font-black tracking-widest text-primary uppercase shadow-[3px_3px_0px_0px_hsl(var(--primary))] -rotate-1 cursor-default">
                         <Radio
@@ -75,41 +72,41 @@ export default function Contact() {
 
                     <BlurText
                         text="Transmit A Signal."
-                        className="text-balance text-4xl font-black tracking-tight text-foreground uppercase sm:text-5xl md:text-6xl"
+                        className="text-4xl font-black tracking-tight uppercase text-balance text-foreground sm:text-5xl md:text-6xl"
                     />
 
-                    <p className="mx-auto mt-6 max-w-2xl text-pretty text-base font-medium leading-relaxed text-muted-foreground sm:text-lg">
+                    <p className="max-w-2xl mx-auto mt-6 text-base font-medium leading-relaxed text-pretty text-muted-foreground sm:text-lg">
                         No robotic contact forms that disappear into the void.
                         Choose your preferred frequency below to initiate a
                         direct, unmediated transmission.
                     </p>
 
-                    <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+                    <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
                         <Button
                             asChild
                             variant="outline"
                             size="lg"
-                            className="group cursor-pointer"
+                            className="cursor-pointer group"
                         >
                             <a
-                                href="/resume.pdf" 
+                                href="/resume.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2.5"
                             >
                                 <FileDown className="h-4 w-4 text-accent transition-transform group-hover:-translate-y-0.5" />
-                                <span>Download Declassified Dossier (CV)</span>
+                                <span>Download Dossier (CV)</span>
                             </a>
                         </Button>
 
                         <div className="flex items-center gap-2 border-2 border-border bg-card px-3 py-2 text-xs font-bold tracking-wider text-muted-foreground uppercase shadow-[2px_2px_0px_0px_hsl(var(--border))] rotate-1">
-                            <span className="inline-block h-2 w-2 bg-emerald-500 animate-pulse" />
+                            <span className="inline-block w-2 h-2 bg-emerald-500 animate-pulse" />
                             <span>Status: Available for new missions</span>
                         </div>
                     </div>
                 </div>
 
-                <div className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-8">
+                <div className="grid grid-cols-1 gap-6 mt-16 lg:grid-cols-3 lg:gap-8">
                     {channels.map((channel, index) => {
                         const IconComponent = channel.icon;
 
@@ -131,7 +128,7 @@ export default function Contact() {
                                 >
                                     <div>
                                         <div className="flex items-start justify-between gap-4">
-                                            <div className="flex h-14 w-14 shrink-0 items-center justify-center border-2 border-border bg-background transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
+                                            <div className="flex items-center justify-center transition-transform duration-300 border-2 h-14 w-14 shrink-0 border-border bg-background group-hover:rotate-6 group-hover:scale-110">
                                                 <IconComponent className="h-7 w-7 text-foreground" />
                                             </div>
 
@@ -141,11 +138,11 @@ export default function Contact() {
                                         </div>
 
                                         <div className="mt-6">
-                                            <h3 className="text-xl font-black tracking-tight text-foreground uppercase transition-colors group-hover:text-primary sm:text-2xl">
+                                            <h3 className="text-xl font-black tracking-tight uppercase transition-colors text-foreground group-hover:text-primary sm:text-2xl">
                                                 {channel.name}
                                             </h3>
 
-                                            <p className="mt-1 font-mono text-xs font-bold text-accent truncate">
+                                            <p className="mt-1 font-mono text-xs font-bold truncate text-accent">
                                                 {channel.handle}
                                             </p>
                                         </div>
@@ -155,9 +152,9 @@ export default function Contact() {
                                         </p>
                                     </div>
 
-                                    <div className="mt-8 flex items-center justify-between border-t-2 border-border/40 pt-4 text-xs font-black tracking-widest text-foreground uppercase">
+                                    <div className="flex items-center justify-between pt-4 mt-8 text-xs font-black tracking-widest uppercase border-t-2 border-border/40 text-foreground">
                                         <span>Initiate Link</span>
-                                        <ExternalLink className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1 text-primary" />
+                                        <ExternalLink className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1 text-primary" />
                                     </div>
                                 </a>
                             </FadeContent>
@@ -165,10 +162,10 @@ export default function Contact() {
                     })}
                 </div>
 
-                <div className="mt-16 border-2 border-dashed border-border bg-card/40 p-6 sm:p-8">
+                <div className="p-6 mt-16 border-2 border-dashed border-border bg-card/40 sm:p-8">
                     <div className="flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
                         <div className="flex items-center gap-3">
-                            <div className="flex h-10 w-10 shrink-0 items-center justify-center border-2 border-border bg-background text-red-500">
+                            <div className="flex items-center justify-center w-10 h-10 text-red-500 border-2 shrink-0 border-border bg-background">
                                 <MapPin
                                     size={20}
                                     className="animate-bounce"
@@ -176,7 +173,7 @@ export default function Contact() {
                                 />
                             </div>
                             <div>
-                                <h4 className="font-mono text-xs font-black tracking-widest text-foreground uppercase">
+                                <h4 className="font-mono text-xs font-black tracking-widest uppercase text-foreground">
                                     Basecamp Coordinates
                                 </h4>
                                 <p className="text-xs font-medium text-muted-foreground">
@@ -187,11 +184,11 @@ export default function Contact() {
                         </div>
 
                         <div className="flex items-center gap-3">
-                            <div className="flex h-10 w-10 shrink-0 items-center justify-center border-2 border-border bg-background text-accent">
+                            <div className="flex items-center justify-center w-10 h-10 border-2 shrink-0 border-border bg-background text-accent">
                                 <Clock size={20} />
                             </div>
                             <div>
-                                <h4 className="font-mono text-xs font-black tracking-widest text-foreground uppercase">
+                                <h4 className="font-mono text-xs font-black tracking-widest uppercase text-foreground">
                                     Response Frequency
                                 </h4>
                                 <p className="text-xs font-medium text-muted-foreground">

@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
 import FeaturedProject from "./FeaturedProject";
 import ProjectCard from "./ProjectCard";
@@ -11,7 +10,6 @@ import FadeContent from "@/components/ui/FadeContent";
 import { Badge } from "@/components/ui/badge";
 import { FolderGit2, Terminal, ShieldAlert, ArrowLeft } from "lucide-react";
 
-// Official Developer Icons Import
 import { GitHubLight, LinkedIn, Gmail } from "developer-icons";
 
 export default function Projects() {
@@ -48,7 +46,7 @@ export default function Projects() {
                         </a>
 
                         <a
-                            href="https://linkedin.com"
+                            href="https://www.linkedin.com/in/abhishek30125/"
                             target="_blank"
                             rel="noreferrer"
                             aria-label="LinkedIn Profile"
@@ -64,7 +62,7 @@ export default function Projects() {
                         </a>
 
                         <a
-                            href="mailto:abhishek@example.com?subject=Mission%20Inquiry%20//%20Portfolio"
+                            href="mailto:abhik5567@gmail.com?subject=Mission%20Inquiry%20//%20Portfolio"
                             aria-label="Direct Email via Gmail"
                             className="group relative flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-none border-2 border-red-500/20 bg-gradient-to-tr from-black/60 to-black/40 p-2 shadow-lg backdrop-blur-lg transition-all duration-300 ease-out hover:scale-110 hover:rotate-2 hover:border-red-500/50 hover:bg-gradient-to-tr hover:from-red-500/10 hover:to-black/40 hover:shadow-xl hover:shadow-red-500/30 active:scale-95 active:rotate-0"
                         >

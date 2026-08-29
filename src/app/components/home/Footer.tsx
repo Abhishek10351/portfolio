@@ -44,7 +44,7 @@ export default function Footer() {
                                 <GitHubLight size={16} />
                             </a>
                             <a
-                                href="https://linkedin.com"
+                                href="https://www.linkedin.com/in/abhishek30125/"
                                 target="_blank"
                                 rel="noreferrer"
                                 aria-label="LinkedIn Profile"
@@ -53,7 +53,7 @@ export default function Footer() {
                                 <LinkedIn size={16} />
                             </a>
                             <a
-                                href="mailto:abhishek@example.com?subject=Mission%20Inquiry%20//%20Portfolio"
+                                href="mailto:abhik5567@gmail.com?subject=Mission%20Inquiry%20//%20Portfolio"
                                 aria-label="Direct Email"
                                 className="flex h-8 w-8 items-center justify-center border border-border bg-background text-muted-foreground transition-all hover:border-primary hover:text-primary hover:scale-110"
                             >
